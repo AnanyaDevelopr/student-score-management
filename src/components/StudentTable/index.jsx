@@ -1,5 +1,5 @@
-import React from "react";
 import emailjs from "emailjs-com"; // Import EmailJS SDK
+import React from "react";
 
 const StudentTable = ({ students, deleteStudent, updateStudent }) => {
   const sendMail = async (student) => {
@@ -110,9 +110,16 @@ const StudentTable = ({ students, deleteStudent, updateStudent }) => {
       ) : (
         <div className="flex flex-col items-center justify-center h-36">
           {/* Show "Student details not added" message and image */}
-          <p className="text-red-500 text-2xl font-bold">Student details not added</p>
+          <p className="text-red-500 text-2xl font-bold">
+            Student details not added
+          </p>
           <p className="mt-4 text-sm text-gray-700">
-            You can add or view student details on the <a href="/" className="underline"> home page</a>.
+            You can add or view student details on the{" "}
+            <a href="/" className="underline">
+              {" "}
+              home page
+            </a>
+            .
           </p>
         </div>
       )}

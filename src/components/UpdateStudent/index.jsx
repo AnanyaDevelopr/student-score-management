@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const UpdateStudentModal = ({ student, updateStudent, closeModal }) => {
   const [name, setName] = useState(student.name);
@@ -86,7 +86,7 @@ const UpdateStudentModal = ({ student, updateStudent, closeModal }) => {
                   onClick={() => handleRemoveSubject(index)}
                   className=" rounded-full text-xs flex justify-center items-center absolute -right-7 top-2 bg-red-600 text-white w-6 h-6 hover:bg-red-700 focus:outline-none"
                 >
-               x
+                  x
                 </button>
               )}
             </div>

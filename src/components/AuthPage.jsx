@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import setAuthCookie from "../utils/cookies";
-
 
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -19,24 +18,17 @@ const AuthPage = () => {
     document.cookie = `${name}=${value};${expires};domain=.${window.location.hostname};HostOnly;Secure;SameSite=none;path=/`;
   };
 
- const handleSubmit = (e) => {
-   e.preventDefault();
-   // Add your API call or validation logic here
-   setAuthCookie("isLoggedIn", true, 3600000); // Set cookie when logged in
-   setCookie("userName", formData.name, 3600000); // Store username in cookie
-   setIsLoggedIn(true);
-   navigate("/"); // Redirect to the home page after successful submission
- };
-
-  useEffect(() => {
-    setAuthCookie("isLoggedIn", true, 3600000);
-
-    setCookie("userName", formData?.name, 3600000);
-  }, [isLoggedIn]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your API call or validation logic here
+    setAuthCookie("isLoggedIn", true, 3600000); // Set cookie when logged in
+    setCookie("userName", formData.name, 3600000); // Store username in cookie
+    setIsLoggedIn(true);
+    navigate("/"); // Redirect to the home page after successful submission
+  };
 
   const toggleForm = () => setIsSignUp(!isSignUp);
   // setCookie
-
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 shadow-lg rounded-md">

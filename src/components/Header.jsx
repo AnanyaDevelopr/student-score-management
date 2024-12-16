@@ -9,7 +9,7 @@ const Header = () => {
 
   // Make sure isLoggedIn is correctly parsed as boolean
   const isUserLoggedIn = isLoggedIn === true ? true : false;
-  console.log(isUserLoggedIn,"isUserLoggedIn");
+  console.log(isUserLoggedIn, "isUserLoggedIn");
   return (
     <header className="bg-white shadow-lg px-16">
       <div className="container mx-auto flex items-center justify-between p-4">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import setAuthCookie, { deleteCookie } from "../utils/cookies";
 import { Link } from "react-router-dom";
+import setAuthCookie, { deleteCookie } from "../utils/cookies";
 
 const ProfileMenu = ({ username }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,21 +9,12 @@ const ProfileMenu = ({ username }) => {
     setMenuOpen(!menuOpen);
   };
 
-  const setCookie = (name, value, seconds) => {
-    const date = new Date();
-    date.setTime(date.getTime() + seconds * 1000);
-    const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `${name}=${value};${expires};domain=.${window.location.hostname};HostOnly;Secure;SameSite=none;path=/`;
+  const handleLogout = () => {
+    setAuthCookie("isLoggedIn", false, 3600000); // Set isLoggedIn as false
+    deleteCookie("userName");
+    deleteCookie("isLoggedIn");
+    setMenuOpen(false);
   };
-
-const handleLogout = () => {
-  setAuthCookie("isLoggedIn", false, 3600000); // Set isLoggedIn as false
-  deleteCookie("userName");
-  deleteCookie("isLoggedIn");
-  setMenuOpen(false);
-  
-};
-
 
   return (
     <div className="relative inline-block">

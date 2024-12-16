@@ -55,7 +55,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white mt-8  w-full">
       <div className="flex justify-center flex-col px-4 py-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4  items-end justify-center">    
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4  items-end justify-center">
           {footerSections.map((section, index) => (
             <div className="" key={index}>
               <h4 className="font-bold text-base">{section.title}</h4>
