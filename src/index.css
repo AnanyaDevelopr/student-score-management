@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.swiper-wrapper .swiper-pagination {
+    @apply !-bottom-[5px] my-2.5
+}
+:root {
+    @apply bg-gray-100
+}
+
+.swiper-wrapper .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    @apply bg-red-500
+}
