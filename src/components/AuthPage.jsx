@@ -5,6 +5,7 @@ import setAuthCookie from "../utils/cookies";
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log(isLoggedIn);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
